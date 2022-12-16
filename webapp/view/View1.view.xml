@@ -1,0 +1,66 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" 
+          controllerName="emc.hr.payroll.controller.View1">
+    <Page title="{i18n>XTIT_VIEW1}">
+        <headerContent>
+            <Button icon="sap-icon://action" press="onNext"></Button>
+        </headerContent>
+        <content>
+            <SearchField id="idSF" search="onSearch" liveChange="onSearch"></SearchField>
+            <List id="idLST" items="{
+                path:'/fruits',
+             sorter:{
+                 path:'name'
+             }
+            }"
+             selectionChange="onFruitSelect" mode="SingleSelectMaster" rememberSelections="true"> 
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="FRESH FRUITS" />
+                        <ToolbarSpacer/>
+                        <Button text="Delete"
+                                type="Reject"
+                                icon="sap-icon://delete"
+                                press="onDeleteSelected"/>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <items>
+                    
+                    <ObjectListItem 
+                                    icon="{image}"
+                                    title="{name}"
+                                    number="{price}"
+                                    numberUnit="{curr}"
+                                    intro="{taste}"
+                                    >
+                    </ObjectListItem>
+                    <!-- <DisplayListItem  label="Apple" value="A Natural Antibiotic"></DisplayListItem>
+                    <StandardListItem title="Orange" description="Rich Source of Vitamin C" icon="https://files.oyebesmartest.com/uploads/large/501561057113ql5gwujnin2pttthcj9rcvx1yamotclyqb9m23izfuy335dszqpt8lklhvg5v3tzrtjxhk4jbdw5emfnozgzesox93dv78bnz3by.png"></StandardListItem>
+                    <InputListItem >
+                        <HBox>
+                            <Label text="What is your Favourite food ?"/>
+                            <Input/>
+                        </HBox>
+                    </InputListItem>
+                    <CustomListItem >
+                        <Label text="Cash On Delivery?"></Label>
+                        <Switch ></Switch>
+                    </CustomListItem>
+                    <ObjectListItem title="Banana" intro="Great Source of Potassium" icon="https://cdn.pixabay.com/photo/2012/04/26/18/41/banana-42793__340.png"
+                    number="150 INR" numberUnit="Per Dozen" numberState="Warning">
+                    <attributes>
+                        <ObjectAttribute title="Color" text="Yellow-Green"></ObjectAttribute>
+                        <ObjectAttribute title="Unit" text="Dozen"></ObjectAttribute>
+                    </attributes>
+                    <firstStatus>
+                        <ObjectStatus text="Available" state="Success"></ObjectStatus>
+                    </firstStatus>
+                    </ObjectListItem>
+                    <FeedListItem icon="https://pbs.twimg.com/profile_images/1565985672501927936/d-r-h241_400x400.jpg" sender="Narendra Modi" text="Namaste mere Bhaioo aur Behno!!!" timestamp="Mon 3rd Oct 2022"></FeedListItem>
+                    <ActionListItem press="onItemClick" text="Order Now"></ActionListItem> -->
+                </items>
+            </List>
+        </content>
+        <!-- <Button text="Click Me For View 2" icon="sap-icon://arrow-right"
+            press="onNext" /> -->
+    </Page>
+</mvc:View>          

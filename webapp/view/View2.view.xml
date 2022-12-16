@@ -1,0 +1,31 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form"
+          xmlns:core="sap.ui.core"
+          controllerName="emc.hr.payroll.controller.View2">
+    <Page title="View 2" showNavButton="true" navButtonPress="onBack">
+            <!-- <Button text="Back to View 1" icon="sap-icon://arrow-left"
+                press="onBack" /> -->
+              <ObjectHeader intro="{healthBenefit}" title="{name}" icon="{image}"
+              number="{price}" numberUnit="{curr}"></ObjectHeader>
+              <IconTabBar >
+                    <items>
+                        <IconTabFilter iconColor="Default" icon="sap-icon://hint" text="Info">
+                            <core:Fragment fragmentName="emc.hr.payroll.fragments.moreInfo" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabFilter iconColor="Positive" icon="sap-icon://supplier" text="Supplier">
+                            <core:Fragment fragmentName="emc.hr.payroll.fragments.supplier" type="XML"/>
+                        </IconTabFilter>
+                        <IconTabFilter iconColor="Negative" icon="sap-icon://home" text="Cities">
+                            <core:Fragment fragmentName="emc.hr.payroll.fragments.city" type="XML"/>
+                        </IconTabFilter>
+
+                    </items>
+              </IconTabBar>
+            <footer>
+                <Toolbar>
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <Button text="Order Now" type="Emphasized" press="onOrder"></Button>
+                    <Button text="Cancel" type="Reject" press="onCancel"></Button>
+                </Toolbar>
+            </footer>
+    </Page>
+</mvc:View>         

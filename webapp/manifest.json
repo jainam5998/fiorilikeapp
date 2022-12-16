@@ -1,0 +1,92 @@
+{
+    "_version": "1.9.0",
+    "sap.app": {
+        "id": "emc.hr.payrol",
+        "applicationVersion": {
+            "version":"1.0.0"
+        },
+        "description": "{{APP_DESCRIPTION}}",
+        "title": "{{APP_TITLE}}",
+        "i18n": "i18n/i18n.properties",
+        "type": "application"
+    },
+    "sap.ui":{
+         "technology": "UI5",
+         "deviceTypes":{
+             "desktop": true,
+             "phone": true,
+             "tablet": true
+         },
+         "icons": {
+             "icon": "sap-icon://home"
+         }
+    },
+    "sap.ui5":{
+        "dependencies": {
+            "minUI5Version": "1.87.0",
+            "libs": {
+                "sap.m":{},
+                "sap.ui.table":{}
+            }
+        },
+        "rootView":{
+            "viewName": "emc.hr.payroll.view.App",
+            "type": "XML",
+            "id":"idAppView"
+        },
+        "routing": {
+            "config":{
+                "viewPath": "emc.hr.payroll.view",
+                "viewType": "XML",
+                "controlId": "appCon",
+                "clearControlAggregation": true
+            },
+            "routes":[
+                {
+                    "name": "master",
+                    "target":["VW1","VW3"],
+                    "pattern": ""
+                },
+                {
+                    "name":"detail",
+                    "target":["VW1","VW2"],
+                    "pattern": "fruits/{fruitId}"
+                }
+            ],
+            "targets": {
+                "VW1":{
+                    "viewName": "View1",
+                    "controlAggregation":"masterPages"
+                    
+                }, 
+                "VW2":{
+                    "viewName":"View2",
+                    "controlAggregation": "detailPages"
+                  
+                },
+                "VW3":{
+                    "viewName":"View3",
+                    "controlAggregation": "detailPages"
+                  
+                }
+            }
+        },
+        "library": {
+            "css":"css/mystyle.css"
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n":{
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            },
+            "":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/mockdata/fruits.json"
+            }
+        }
+    }
+}
