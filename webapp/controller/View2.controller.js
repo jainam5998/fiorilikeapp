@@ -20,8 +20,12 @@ sap.ui.define([
                     MessageToast.show(this.readMessage("XMSG_ORDRL","9999"));
                 }
                 else{
-
+                    MessageToast.show("Order Cancelled");
                 }
+        },
+        onCancel:function()
+        {
+            this.oRouter.navTo("master");
         },
         onOrder:function()
         {  
